@@ -1,0 +1,251 @@
+.clip-box {
+    position:relative; /* this one is new - used to contain absolute elements */
+    width: 400px;
+    height: 200px;
+    overflow:hidden;
+    box-shadow: 0 0 15px black;
+    background-color: aquamarine;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 20%);
+}
+
+.container {
+    margin: 20px auto;
+}
+
+// glassmorphed
+.clip-box-gl {
+    position:relative; /* this one is new - used to contain absolute elements */
+    width: 400px;
+    height: 200px;
+    // overflow:hidden;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 20%);
+    background: rgba(255, 255, 255, 0.23);
+    backdrop-filter: blur(10.4px);
+    -webkit-backdrop-filter: blur(10.4px);
+    // border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
+// glassmorphed without clip 
+// .box-gl {
+    //     position:relative; /* this one is new - used to contain absolute elements */
+    //     width: 400px;
+    //     height: 200px;
+    //     background: rgba(255, 255, 255, 0.23);
+    //     backdrop-filter: blur(10.4px);
+    //     -webkit-backdrop-filter: blur(10.4px);
+    //     border: 1px solid rgba(209, 213, 219, 0.1);
+    //     box-shadow: 0 0 15px rgba(255, 255, 255, 0.411);
+    // }
+    
+    .box-gl {
+        position:relative; /* this one is new - used to contain absolute elements */
+        width: 400px;
+        height: 200px;
+        background: rgba(0, 255, 234, 0.23);
+        backdrop-filter: blur(10.4px);
+        -webkit-backdrop-filter: blur(10.4px);
+        border: 1px solid #88ebfa7e;
+        box-shadow: 0 0 15px rgba(0, 255, 242, 0.411);
+        // font
+        font-family: 'Libre Barcode 128 Text', cursive;
+        font-size: 2em;
+        padding: calc(2px + .1em);
+    }
+    
+    // neo box 
+    
+    .neo-box {
+        width: 200px;
+        height: 100px;
+        border-radius: 5px;
+        background: #e0e0e0;
+        box-shadow:  50px 50px 100px #c5c5c5,
+        -50px -50px 100px #fbfbfb;
+        margin: 100px auto;
+        animation: grow 5s ;
+    }
+    
+    @keyframes grow {
+        0% {
+            box-shadow:  0 0 0 #c5c5c5,
+            0 0 0 #fbfbfb;
+        }
+        // 10% {
+            //     box-shadow:  0 0 0 #c5c5c5,
+            //     0 0 0 #fbfbfb;
+            // }
+            100% {
+                box-shadow:  50px 50px 100px #c5c5c5,
+                -50px -50px 100px #fbfbfb;
+            }
+        }
+        
+        @keyframes grow-btn {
+            0% {
+                box-shadow:  0 0 0 #c5c5c5,
+                0 0 0 #fbfbfb;
+            }
+            // 10% {
+                //     box-shadow:  0 0 0 #c5c5c5,
+                //     0 0 0 #fbfbfb;
+                // }
+                100% {
+                    box-shadow:  20px 20px 40px #c5c5c5,
+                    -20px -20px 40px #fbfbfb;
+                }
+            }
+            
+            
+            
+            .hexagone {
+                position: relative;
+                width: 173.20508px;
+                visibility: hidden;
+                overflow: hidden;
+                // -webkit-filter : drop-shadow(5px 5px 5px rgba(0,0,0,0.6));
+                filter : drop-shadow( 15px 15px 30px #c5c5c5) drop-shadow(
+                -15px -15px 30px #ffffff);
+            }
+            .hexagone:after {
+                -moz-box-sizing: content-box;
+                -webkit-box-sizing: content-box;
+                box-sizing: content-box;
+                content: "";
+                display: block;
+                margin-top: 28.86751%;
+                padding-bottom: 86.602%;
+            }
+            .hexagone .hexagonemain{
+                display: block;
+                position: absolute;
+                width: 100%;
+                padding-bottom: 115.47005%;
+                overflow: hidden;
+                visibility: hidden;
+                -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+                -ms-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+                transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+                z-index: 1;
+            }
+            .hexagone .hexagonemain:before{
+                content: "";
+                display: block;
+                position: absolute;
+                visibility: visible;
+                display: block;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                background: #e0e0e0;
+                -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+                -ms-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+                transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+            }
+            
+            
+            .cells {
+                display: flex;
+                .hexagone:nth-of-type(1) {
+                    z-index: 3;
+                }
+                .hexagone:nth-of-type(2) {
+                    z-index: 2;
+                    align-self: end;
+                }
+                
+                .hexagone:nth-of-type(3) {
+                    z-index: 1;
+                }
+                .octagon-contain:nth-of-type(1) {
+                    z-index: 3;
+                }
+                .octagon-contain:nth-of-type(2) {
+                    z-index: 2;
+                    align-self: end;
+                }
+                
+                .octagon-contain:nth-of-type(3) {
+                    z-index: 1;
+                }
+            }
+            
+            
+            // .octagon
+            
+            .octagon {
+                width: 150px;
+                height: 150px;
+                background-color: red;
+                clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+                
+                background: #e0e0e0;
+            }
+            
+            .octagon-contain {
+                margin-top: 50px;
+                filter : drop-shadow( 15px 15px 30px #c5c5c5) drop-shadow(
+                -15px -15px 30px #ffffff);
+            }
+            
+            
+            .neoSphere {
+                margin: 50px;
+                width: 500px;
+                height: 500px;
+                background-color: #DFF3FF;
+                border-radius: 50%;
+                box-shadow: inset 0 0 70px #0099ff4d, 0 0 10px #0099ff6b, inset 0 0 10px #0099ff11;
+                border: 3px solid #0099ff3d;
+                position: relative;
+                animation: spherePulse 3s infinite;
+            }
+            .neoSphere::after {
+                content: '';
+                position: absolute;
+                border-radius: 50%;    
+                box-shadow: inset 0px 0px 10px #c5c5c5;
+                width: 500px;
+                height: 500px;
+                // top: -3px;
+                // left: -3px;
+                top: 50%;
+                left: 50%;
+                opacity: .5;
+                transform: translate(-50% , -50%);
+            }
+            .neoSphere::before {
+                content: '';
+                position: absolute;
+                border-radius: 50%;
+                width: 535px;
+                height: 535px;
+                border: 1px dashed rgb(107, 107, 107);
+                top: -21px;
+                left: -21px;
+            }
+            
+            .neoConcave {
+                margin: 50px;
+                
+                border-radius: 50%;    
+                box-shadow: inset 1px 3px 5px #c5c5c5;
+                width: 500px;
+                height: 500px;
+            }
+
+            @keyframes spherePulse {
+                0% {
+                    box-shadow: inset 0 0 200px #53b7fa4d, 0 0 10px #0099ff6b, inset 0 0 10px #0099ff11;
+                    background-color: #c9e5f8be;
+                }
+                50% {
+                
+                box-shadow: inset 0 0 20px #0099ff4d, 0 0 10px #0099ff6b, inset 0 0 10px #0099ff11;
+
+
+                }
+                100% {
+                    box-shadow: inset 0 0 200px #53b7fa4d, 0 0 10px #0099ff6b, inset 0 0 10px #0099ff11;
+                background-color: #c9e5f8be;
+                    }
+            }

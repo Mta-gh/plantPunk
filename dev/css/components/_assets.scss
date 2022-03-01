@@ -1,0 +1,60 @@
+.pulse {
+    width: 500px;
+    height: 20px;
+    background: rgb(182,255,220);
+    background: linear-gradient(90deg, rgba(194,194,194,0) 0%, rgba(182,255,220,1) 50%, rgba(194,194,194,0) 100%);
+    margin: 50px;
+    transition: all .7s ease-in-out;
+    border-radius: 50px;
+    box-shadow: inset 1px 3px 5px #c5c5c5;
+    background-position:-400px;  
+    background-repeat: no-repeat;
+    animation: pulsate 1.5s infinite;
+    
+}
+
+
+.pulseV2 {
+    width: 500px;
+    height: 20px;
+    background: rgb(182,255,220);
+    background: linear-gradient(90deg, rgba(194,194,194,0) 0%, rgba(182,255,220,1) 50%, rgba(194,194,194,0) 100%);
+    margin: 50px;
+    transition: all .7s ease-in-out;
+    border-radius: 50px;
+    box-shadow: inset 1px 3px 10px rgba(194,194,194, .8);
+    background-position:-400px;  
+    background-repeat: no-repeat;
+    animation: pulsate2 3s infinite;
+    filter: blur(8px);
+    
+}
+
+@keyframes pulsate {
+    0% {
+        background-position:-500px;  
+    }
+    50% {
+        background-position:-450px;  
+    }
+    100% {
+        background-position:400px;
+    }
+    
+}
+
+@keyframes pulsate2 {
+    0% {
+        background-position:-500px;
+
+
+    }
+    50% {
+        background-position:-450px;  
+    }
+    100% {
+        background-position:400px;
+
+    }
+    
+}
