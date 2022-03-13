@@ -1,3 +1,4 @@
+// concave pulse bar
 .pulse {
     width: 500px;
     height: 20px;
@@ -13,7 +14,7 @@
     
 }
 
-
+// Undersurface pulse bar
 .pulseV2 {
     width: 500px;
     height: 20px;
@@ -30,6 +31,7 @@
     
 }
 
+// Animation for the concave bar
 @keyframes pulsate {
     0% {
         background-position:-500px;  
@@ -43,13 +45,14 @@
     
 }
 
+// Animation for the blurred undersurface bar
 @keyframes pulsate2 {
     0% {
         background-position:-500px;
 
 
     }
-    70% {
+    80% {
         background-position:-450px;  
     }
     100% {
@@ -57,4 +60,11 @@
 
     }
     
+}
+
+.drop {
+    svg {
+        width: 50px;
+        
+    }
 }

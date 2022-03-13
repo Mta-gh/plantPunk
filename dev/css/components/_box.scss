@@ -61,10 +61,25 @@
         background: #e0e0e0;
         box-shadow:  50px 50px 100px #c5c5c5,
         -50px -50px 100px #fbfbfb;
-        margin: 100px auto;
+        margin: 100px 50px;
         animation: grow 5s ;
+        font-family: 'Libre Barcode 128 Text', cursive;
+    }
+
+    .neo-info {
+        width: 500px;
+        height: 500px;
+        padding: 20px;
+        font-size: 2em;
+        h2 {
+            font-weight: 400;
+            margin: 0;
+            font-size: 1em;
+        }
+
     }
     
+    // Keyframes for the on load growth
     @keyframes grow {
         0% {
             box-shadow:  0 0 0 #c5c5c5,
@@ -79,7 +94,7 @@
                 -50px -50px 100px #fbfbfb;
             }
         }
-        
+    // Keyframes for the on load growth
         @keyframes grow-btn {
             0% {
                 box-shadow:  0 0 0 #c5c5c5,
@@ -96,7 +111,7 @@
             }
             
             
-            
+            // Hexagone button (for nav
             .hexagone {
                 position: relative;
                 width: 173.20508px;
@@ -171,7 +186,6 @@
             
             
             // .octagon
-            
             .octagon {
                 width: 150px;
                 height: 150px;
@@ -187,7 +201,7 @@
                 -15px -15px 30px #ffffff);
             }
             
-            
+            // Pulsating Sphere with image 
             .neoSphere {
                 margin: 50px;
                 width: 500px;
@@ -225,6 +239,7 @@
                 left: -21px;
             }
             
+            // Concave Sphere
             .neoConcave {
                 margin: 50px;
                 
@@ -234,12 +249,14 @@
                 height: 500px;
             }
 
+
+            // Sphere Pulse
             @keyframes spherePulse {
                 0% {
                     box-shadow: inset 0 0 200px rgba(182,255,220,1), 0 0 5px rgba(182,255,220,1), inset 0 0 10px #0099ff11;
                     background-color: rgba(220, 252, 236, 0.753);
                 }
-                70% {
+                80% {
                 
                 box-shadow: inset 0 0 20px rgba(182,255,220,1), 0 0 5px rgba(182,255,220,1), inset 0 0 10px #0099ff11;
 
