@@ -1,5 +1,17 @@
-.home{
-    background-image: url(../../img/smaller-petrol2.gif);
+html {
+    font-size: 10px;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: $ff-one;
+    font-size: 1.8rem;
+    background: $primary-colour;
+}
+.tests{
+    background-image: url(../img/smaller-petrol2.gif);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -9,3 +21,24 @@
 .neo {
     background-color: #e0e0e0;
 }
+
+h1 { @extend %title-h1; }
+
+.logo { 
+    margin-right: auto;
+    background: #d3d3d3;
+    color: transparent;
+    // box-shadow: $inset-shadow;
+    text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+}
+
+.wrapper {
+    margin: 0 auto;
+    padding: 0 3rem;
+    width: 100%;
+}
+
+p { text-shadow: 0 0 2px $black;}
