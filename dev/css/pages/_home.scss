@@ -4,29 +4,40 @@
   justify-content: center;
   justify-items: center;
   grid-template-columns: repeat(4, 25rem);
-  // grid-auto-rows: 33rem;
+  grid-auto-rows:24rem;
+  position: relative;
+}
+
+.grid__cells {
+  height: 23rem;
+  width: 23rem;
   position: relative;
 }
 
 .hex__card {
   width: 23rem;
   height: 23rem;
+  &:hover { box-shadow: none; }
 }
 
 .hex__container { 
   margin-top: 0;
   margin: 0 -6rem; 
-  filter : drop-shadow( 13px 13px 15px #e1dede) drop-shadow(-13px -13px 20px #ffffff);
+  filter : drop-shadow( 13px 10px 15px #e1dede) drop-shadow(-13px -10px 20px #ffffff);
   animation: grow-hex 5s;
+  transition: all .3s ease-in-out;
+  &:hover {
+    filter : drop-shadow( 35px 20px 20px #e1dede) drop-shadow(-35px -20px 20px #ffffff);
+  }
 }
 
 
-.hex__container:nth-of-type(even) {
+.grid__cells:nth-of-type(even) {
   align-self: flex-end;
   position: relative;
   width: 23rem;
   height: 23rem;
-  .hex__card {
+  .hex__container{
     position: absolute;
     left: 0;
     top: 10rem;
