@@ -25,244 +25,358 @@
     // border: 1px solid rgba(209, 213, 219, 0.3);
 }
 
-// glassmorphed without clip 
-// .box-gl {
-    //     position:relative; /* this one is new - used to contain absolute elements */
-    //     width: 400px;
-    //     height: 200px;
-    //     background: rgba(255, 255, 255, 0.23);
-    //     backdrop-filter: blur(10.4px);
-    //     -webkit-backdrop-filter: blur(10.4px);
-    //     border: 1px solid rgba(209, 213, 219, 0.1);
-    //     box-shadow: 0 0 15px rgba(255, 255, 255, 0.411);
-    // }
-    
-    .box-gl {
-        position:relative; /* this one is new - used to contain absolute elements */
-        width: 400px;
-        height: 200px;
-        background: rgba(0, 255, 234, 0.23);
-        backdrop-filter: blur(10.4px);
-        -webkit-backdrop-filter: blur(10.4px);
-        border: 1px solid #88ebfa7e;
-        box-shadow: 0 0 15px rgba(0, 255, 242, 0.411);
-        // font
-        font-family: 'Libre Barcode 128 Text', cursive;
-        font-size: 2em;
-        padding: calc(2px + .1em);
+
+.box-gl {
+    position:relative; /* this one is new - used to contain absolute elements */
+    width: 400px;
+    height: 200px;
+    background: rgba(0, 255, 234, 0.23);
+    backdrop-filter: blur(10.4px);
+    -webkit-backdrop-filter: blur(10.4px);
+    border: 1px solid #88ebfa7e;
+    box-shadow: 0 0 15px rgba(0, 255, 242, 0.411);
+    // font
+    font-family: 'Libre Barcode 128 Text', cursive;
+    font-size: 2em;
+    padding: calc(2px + .1em);
+}
+
+// neo box 
+
+.neo-box {
+    width: 200px;
+    height: 100px;
+    border-radius: 5px;
+    background: #e0e0e0;
+    box-shadow:  50px 50px 100px #c5c5c5,
+    -50px -50px 100px #fbfbfb;
+    margin: 100px 50px;
+    animation: grow 5s ;
+    font-family: 'Libre Barcode 128 Text', cursive;
+}
+
+.neo-info {
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    font-size: 2em;
+    h2 {
+        font-weight: 400;
+        margin: 0;
+        font-size: 1em;
     }
     
-    // neo box 
+}
+
+// Keyframes for the on load growth
+@keyframes grow {
+    0% {
+        box-shadow:  0 0 0 #c5c5c5,
+        0 0 0 #fbfbfb;
+    }
     
-    .neo-box {
-        width: 200px;
-        height: 100px;
-        border-radius: 5px;
-        background: #e0e0e0;
+    100% {
         box-shadow:  50px 50px 100px #c5c5c5,
         -50px -50px 100px #fbfbfb;
-        margin: 100px 50px;
-        animation: grow 5s ;
-        font-family: 'Libre Barcode 128 Text', cursive;
     }
-
-    .neo-info {
-        width: 500px;
-        height: 500px;
-        padding: 20px;
-        font-size: 2em;
-        h2 {
-            font-weight: 400;
-            margin: 0;
-            font-size: 1em;
-        }
-
+}
+// Keyframes for the on load growth
+@keyframes grow-btn {
+    0% {
+        box-shadow:  0 0 0 #c5c5c5,
+        0 0 0 #fbfbfb;
     }
     
-    // Keyframes for the on load growth
-    @keyframes grow {
+    100% {
+        box-shadow:  20px 20px 40px #c5c5c5,
+        -20px -20px 40px #fbfbfb;
+    }
+}
+
+
+// Hexagone button (for nav
+.hexagone {
+    position: relative;
+    width: 173.20508px;
+    visibility: hidden;
+    overflow: hidden;
+    // -webkit-filter : drop-shadow(5px 5px 5px rgba(0,0,0,0.6));
+    filter : drop-shadow( 15px 15px 30px #c5c5c5) drop-shadow(
+    -15px -15px 30px #ffffff);
+}
+.hexagone:after {
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    content: "";
+    display: block;
+    margin-top: 28.86751%;
+    padding-bottom: 86.602%;
+}
+.hexagone .hexagonemain{
+    display: block;
+    position: absolute;
+    width: 100%;
+    padding-bottom: 115.47005%;
+    overflow: hidden;
+    visibility: hidden;
+    -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+    -ms-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+    transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+    z-index: 1;
+}
+.hexagone .hexagonemain:before{
+    content: "";
+    display: block;
+    position: absolute;
+    visibility: visible;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #e0e0e0;
+    -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+    -ms-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+    transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+}
+
+
+.cells {
+    display: flex;
+    .hexagone:nth-of-type(1) {
+        z-index: 3;
+    }
+    .hexagone:nth-of-type(2) {
+        z-index: 2;
+        align-self: end;
+    }
+    
+    .hexagone:nth-of-type(3) {
+        z-index: 1;
+    }
+    .octagon-contain:nth-of-type(1) {
+        z-index: 3;
+    }
+    .octagon-contain:nth-of-type(2) {
+        z-index: 2;
+        align-self: end;
+    }
+    
+    .octagon-contain:nth-of-type(3) {
+        z-index: 1;
+    }
+}
+
+//hexagon
+.hex {
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+}
+
+// .octagon
+.octagon {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    background: #e0e0e0;
+}
+
+.octagon-contain {
+    margin-top: 50px;
+    filter : drop-shadow( 15px 15px 30px #c5c5c5) drop-shadow(
+    -15px -15px 30px #ffffff);
+}
+
+// Pulsating Sphere with image 
+.neoSphere {
+    margin: 50px;
+    width: 500px;
+    height: 500px;
+    background-color: rgba(182,255,220,1);
+    border-radius: 50%;
+    box-shadow: inset 0 0 70px #0099ff4d, 0 0 10px #0099ff6b, inset 0 0 10px #0099ff11;
+    border: 3px solid rgba(138, 243, 192, 0.315);
+    position: relative;
+    animation: spherePulse 3s infinite;
+    
+}
+.neoSphere::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;    
+    box-shadow: inset 0px 0px 10px #c5c5c5;
+    width: 500px;
+    height: 500px;
+    // top: -3px;
+    // left: -3px;
+    top: 50%;
+    left: 50%;
+    opacity: .5;
+    transform: translate(-50% , -50%);
+}
+.neoSphere::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    width: 535px;
+    height: 535px;
+    border: 1px dashed rgb(107, 107, 107);
+    top: -21px;
+    left: -21px;
+}
+
+// Concave Sphere
+.neoConcave {
+    margin: 50px;
+    
+    border-radius: 50%;    
+    box-shadow: inset 1px 3px 5px #c5c5c5;
+    width: 500px;
+    height: 500px;
+}
+
+
+// Sphere Pulse
+@keyframes spherePulse {
+    0% {
+        box-shadow: inset 0 0 200px rgba(182,255,220,1), 0 0 5px rgba(182,255,220,1), inset 0 0 10px #0099ff11;
+        background-color: rgba(220, 252, 236, 0.753);
+    }
+    80% {
+        
+        box-shadow: inset 0 0 20px rgba(182,255,220,1), 0 0 5px rgba(182,255,220,1), inset 0 0 10px #0099ff11;
+        
+        
+    }
+    100% {
+        box-shadow: inset 0 0 200px rgba(182,255,220,1), 0 0 5px rgba(182,255,220,1), inset 0 0 10px #0099ff11;
+        background-color: rgba(220, 252, 236, 0.822);
+    }
+}
+
+.hex__cell__container { 
+    filter : drop-shadow( 13px 13px 15px #dddada) drop-shadow(-13px -13px 20px #ffffff);
+    animation: grow-hex 5s;
+    .hex__cell {
+        z-index: auto;
+        /* These must be set to auto for the z-indexing to work */
+    }
+}
+.hex__cell {
+    // position: absolute;
+    width:  10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none;
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    transition: all .6s ease-out;
+    background: linear-gradient(319deg, #dddada3d, rgb(255 255 255 / 17%)), linear-gradient(319deg, #f2efef, #f2efef);
+    // animation-play-state: paused;               /* ...but paused */
+    // &::before{
+        //     content: "";
+        //     position: absolute;
+        //     top: 0; left: 0; right: 0; bottom: 0;
+        //     z-index: -1;
+        // }
+        &:hover {
+            box-shadow: inset 0 0 50px rgba(182,255,220,1), 0 0 5px rgba(182,255,220,1), inset 0 0 10px #0099ff11;
+        }
+    }
+    // .hex__cell:nth-of-type(2){ margin: 43px 0 0 75px; }
+    // .hex__cell:nth-of-type(3){ margin: 0 0 0 150px; }
+    // .hex__cell:nth-of-type(4){ margin: 43px 0 0 225px; }
+    // .hex__cell:nth-of-type(5){ margin: 0 0 0 300px; }
+
+    
+    /* For Example 2 */
+    // .select-area{
+    //     position: absolute;
+    //     top: 0; left: 0; right: 0; bottom: 0;
+    //     &::before{
+    //         content: "";
+    //         position: absolute;
+    //         width:  100%;
+    //         height: 100%;
+    //         z-index: -1;
+    //     }
+    //     .select-bg{
+    //         display: block;
+    //         width:  100%;
+    //         height: 100%;
+            
+    //     }
+    // }
+    @keyframes grow-hex {
         0% {
-            box-shadow:  0 0 0 #c5c5c5,
-            0 0 0 #fbfbfb;
+            filter : drop-shadow( 0 0 0 #e1dede) drop-shadow(0 0 0 #ffffff);
         }
-        // 10% {
-            //     box-shadow:  0 0 0 #c5c5c5,
-            //     0 0 0 #fbfbfb;
-            // }
-            100% {
-                box-shadow:  50px 50px 100px #c5c5c5,
-                -50px -50px 100px #fbfbfb;
-            }
+        
+        100% {
+            filter : drop-shadow( 13px 13px 15px #e1dede) drop-shadow(-13px -13px 20px #ffffff);
         }
-    // Keyframes for the on load growth
-        @keyframes grow-btn {
+    }
+
+    @keyframes grow-hex-big {
+        0% {
+            filter : drop-shadow( 0 0 0 #e1dede) drop-shadow(0 0 0 #ffffff);
+        }
+        
+        100% {
+            filter : drop-shadow( 20px 20px 20px #e1dede) drop-shadow(-20px -20px 20px #ffffff);
+        }
+    }
+
+    // .example2{
+        //     .one{ background: yellow; }
+        //     .two{ background: green; }
+        //     .three{ background: yellow; }
+        //     .four{ background: green; }
+        // }
+        
+        @keyframes btnPulse {
             0% {
-                box-shadow:  0 0 0 #c5c5c5,
-                0 0 0 #fbfbfb;
+                box-shadow: inset 0 0 0 rgba(182,255,220,1), 0 0 5px rgba(182,255,220,1), inset 0 0 10px #0099ff11;
             }
-            // 10% {
-                //     box-shadow:  0 0 0 #c5c5c5,
-                //     0 0 0 #fbfbfb;
-                // }
-                100% {
-                    box-shadow:  20px 20px 40px #c5c5c5,
-                    -20px -20px 40px #fbfbfb;
-                }
-            }
-            
-            
-            // Hexagone button (for nav
-            .hexagone {
-                position: relative;
-                width: 173.20508px;
-                visibility: hidden;
-                overflow: hidden;
-                // -webkit-filter : drop-shadow(5px 5px 5px rgba(0,0,0,0.6));
-                filter : drop-shadow( 15px 15px 30px #c5c5c5) drop-shadow(
-                -15px -15px 30px #ffffff);
-            }
-            .hexagone:after {
-                -moz-box-sizing: content-box;
-                -webkit-box-sizing: content-box;
-                box-sizing: content-box;
-                content: "";
-                display: block;
-                margin-top: 28.86751%;
-                padding-bottom: 86.602%;
-            }
-            .hexagone .hexagonemain{
-                display: block;
-                position: absolute;
-                width: 100%;
-                padding-bottom: 115.47005%;
-                overflow: hidden;
-                visibility: hidden;
-                -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
-                -ms-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
-                transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
-                z-index: 1;
-            }
-            .hexagone .hexagonemain:before{
-                content: "";
-                display: block;
-                position: absolute;
-                visibility: visible;
-                display: block;
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-                background: #e0e0e0;
-                -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
-                -ms-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
-                transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
-            }
-            
-            
-            .cells {
-                display: flex;
-                .hexagone:nth-of-type(1) {
-                    z-index: 3;
-                }
-                .hexagone:nth-of-type(2) {
-                    z-index: 2;
-                    align-self: end;
-                }
+            50% {
                 
-                .hexagone:nth-of-type(3) {
-                    z-index: 1;
-                }
-                .octagon-contain:nth-of-type(1) {
-                    z-index: 3;
-                }
-                .octagon-contain:nth-of-type(2) {
-                    z-index: 2;
-                    align-self: end;
-                }
+                box-shadow: inset 0 0 50px rgba(182,255,220,1), 0 0 5px rgba(182,255,220,1), inset 0 0 10px #0099ff11;
                 
-                .octagon-contain:nth-of-type(3) {
-                    z-index: 1;
-                }
-            }
-            
-            
-            // .octagon
-            .octagon {
-                width: 150px;
-                height: 150px;
-                background-color: red;
-                clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-                background: #e0e0e0;
-            }
-            
-            .octagon-contain {
-                margin-top: 50px;
-                filter : drop-shadow( 15px 15px 30px #c5c5c5) drop-shadow(
-                -15px -15px 30px #ffffff);
-            }
-            
-            // Pulsating Sphere with image 
-            .neoSphere {
-                margin: 50px;
-                width: 500px;
-                height: 500px;
-                background-color: rgba(182,255,220,1);
-                border-radius: 50%;
-                box-shadow: inset 0 0 70px #0099ff4d, 0 0 10px #0099ff6b, inset 0 0 10px #0099ff11;
-                border: 3px solid rgba(138, 243, 192, 0.315);
-                position: relative;
-                animation: spherePulse 3s infinite;
                 
             }
-            .neoSphere::after {
-                content: '';
-                position: absolute;
-                border-radius: 50%;    
-                box-shadow: inset 0px 0px 10px #c5c5c5;
-                width: 500px;
-                height: 500px;
-                // top: -3px;
-                // left: -3px;
-                top: 50%;
-                left: 50%;
-                opacity: .5;
-                transform: translate(-50% , -50%);
+            100% {
+                box-shadow: inset 0 0 0 rgba(182,255,220,1), 0 0 5px rgba(182,255,220,1), inset 0 0 10px #0099ff11;
+                
             }
-            .neoSphere::before {
-                content: '';
-                position: absolute;
-                border-radius: 50%;
-                width: 535px;
-                height: 535px;
-                border: 1px dashed rgb(107, 107, 107);
-                top: -21px;
-                left: -21px;
-            }
+        }
+        
+        
+        // glassmorphed without clip 
+        // .box-gl {
+            //     position:relative; /* this one is new - used to contain absolute elements */
+            //     width: 400px;
+            //     height: 200px;
+            //     background: rgba(255, 255, 255, 0.23);
+            //     backdrop-filter: blur(10.4px);
+            //     -webkit-backdrop-filter: blur(10.4px);
+            //     border: 1px solid rgba(209, 213, 219, 0.1);
+            //     box-shadow: 0 0 15px rgba(255, 255, 255, 0.411);
+            // }
             
-            // Concave Sphere
-            .neoConcave {
-                margin: 50px;
-                
-                border-radius: 50%;    
-                box-shadow: inset 1px 3px 5px #c5c5c5;
-                width: 500px;
-                height: 500px;
-            }
-
-
-            // Sphere Pulse
-            @keyframes spherePulse {
-                0% {
-                    box-shadow: inset 0 0 200px rgba(182,255,220,1), 0 0 5px rgba(182,255,220,1), inset 0 0 10px #0099ff11;
-                    background-color: rgba(220, 252, 236, 0.753);
-                }
-                80% {
-                
-                box-shadow: inset 0 0 20px rgba(182,255,220,1), 0 0 5px rgba(182,255,220,1), inset 0 0 10px #0099ff11;
-
-
-                }
-                100% {
-                    box-shadow: inset 0 0 200px rgba(182,255,220,1), 0 0 5px rgba(182,255,220,1), inset 0 0 10px #0099ff11;
-                background-color: rgba(220, 252, 236, 0.822);
-                    }
-            }
+            
+            //                 // Keyframes for the on load growth
+            // @keyframes grow-btn {
+                //     0% {
+                    //         box-shadow:  0 0 0 #c5c5c5,
+                    //         0 0 0 #fbfbfb;
+                    //     }
+                    //     // 10% {
+                        //         //     box-shadow:  0 0 0 #c5c5c5,
+                        //         //     0 0 0 #fbfbfb;
+                        //         // }
+                        //         100% {
+                            //             box-shadow:  20px 20px 40px #c5c5c5,
+                            //             -20px -20px 40px #fbfbfb;
+                            //         }
+                            //     }

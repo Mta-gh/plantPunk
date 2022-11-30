@@ -1,0 +1,36 @@
+
+.main {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  grid-template-columns: repeat(4, 25rem);
+  // grid-auto-rows: 33rem;
+  position: relative;
+}
+
+.hex__card {
+  width: 23rem;
+  height: 23rem;
+}
+
+.hex__container { 
+  margin-top: 0;
+  margin: 0 -6rem; 
+  filter : drop-shadow( 13px 13px 15px #e1dede) drop-shadow(-13px -13px 20px #ffffff);
+  animation: grow-hex 5s;
+}
+
+
+.hex__container:nth-of-type(even) {
+  align-self: flex-end;
+  position: relative;
+  width: 23rem;
+  height: 23rem;
+  .hex__card {
+    position: absolute;
+    left: 0;
+    top: 10rem;
+  }
+}
+
+
