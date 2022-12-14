@@ -1,0 +1,15 @@
+.single {
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10rem;
+  }
+}
+
+.single__info__line {
+  display: flex;
+  align-items: center;
+  svg {
+    width: 4rem;
+    margin-right: 2rem;
+  }
+}

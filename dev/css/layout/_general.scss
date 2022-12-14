@@ -10,6 +10,12 @@ body {
     font-size: 1.8rem;
     background: $primary-colour;
 }
+
+.main {
+    display: grid;
+    justify-content: center;
+}
+
 .tests{
     background-image: url(../img/smaller-petrol2.gif);
     background-position: center;
