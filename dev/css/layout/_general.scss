@@ -31,9 +31,12 @@ body {
 h1 { @extend %title-h1; }
 
 .wrapper {
+    max-width: 160rem;
     margin: 0 auto;
     padding: 0 3rem;
     width: 100%;
 }
 
 p { text-shadow: 0 0 2px $black;}
+
+img { max-width: 100%; }
